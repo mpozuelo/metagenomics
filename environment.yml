@@ -1,0 +1,11 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: mpozuelo-metagenomics1.0
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  ##conda forge packages
+  - conda-forge::python=3.6.10

@@ -195,7 +195,7 @@ process kneaddata_trim_rmHost {
   path index from ch_index
 
   output:
-  path "rmHost/*_paired_*.fastq" into ch_remove_host
+  //path "rmHost/*_paired_*.fastq" into ch_remove_host
   path "rmHost"
 
 

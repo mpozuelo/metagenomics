@@ -168,7 +168,6 @@ Trimmomatic
 
 process kneaddata_index {
   container "biobakery/kneaddata"
-  tag "$sample"
   label "process_low"
 
   output:

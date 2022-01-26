@@ -158,7 +158,7 @@ Also get information about the cycles for the demultiplexing
 Channel
   .from( samplesheet_ch )
   .splitCsv(header:false, sep:',')
-  .map { it = ["${it[1]}", "${it[2]}", "${it[3]}"]}
+  .map { it = ["${it[0]}", "${it[1]}", "${it[2]}"]}
   .set { ch_samplesheet }
 
 

@@ -187,6 +187,7 @@ process kneaddata_index {
 /* Bowtie2 */
 
 process kneaddata_trim_rmHost {
+  container "biobakery/kneaddata"
   tag "$sample"
   label "process_medium"
 
@@ -198,14 +199,11 @@ process kneaddata_trim_rmHost {
   //path "rmHost/*_paired_*.fastq" into ch_remove_host
   path "rmHost"
 
-
   script:
   """
   mkdir rmHost
-  kneaddata --input1 ${fastq1}--input2 ${fastq2} --reference-db ${index} --output rmHost --run-fastqc-start --run-fastqc-end
+  kneaddata --input1 $fastq1 --input2 $fastq2 --reference-db $index --output rmHost --run-fastqc-start --run-fastqc-end
   """
-
-
 }
 
 
@@ -260,7 +258,7 @@ process humann3 {
 
 }
 
-
+*/
 workflow.onComplete {
 
     // Set up the e-mail variables

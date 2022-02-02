@@ -167,19 +167,18 @@ Trimmomatic
 */
 
 process kneaddata_index {
-  container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://hub.docker.com/r/biobakery/kneaddata' }"
-  label "process_low"
 
-  output:
-  path "human" into ch_index
+    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ? 'https://hub.docker.com/r/biobakery/kneaddata' }"
+    label "process_low"
 
-  script:
-  """
-  mkdir human
-  kneaddata_database --download human_genome bowtie2 human
-  """
+    output:
+    path "human" into ch_index
 
+    script:
+    """
+    mkdir human
+    kneaddata_database --download human_genome bowtie2 human
+    """
 }
 
 

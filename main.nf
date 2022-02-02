@@ -168,6 +168,9 @@ Trimmomatic
 
 process kneaddata_index {
 
+    container "biobakery/kneaddata"
+
+
     //container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ? 'https://hub.docker.com/r/biobakery/kneaddata' }"
     label "process_low"
 
